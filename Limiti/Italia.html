@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limiti di Velocità e Orario Neopatentato in Italia</title>
+    <style>
+        :root {
+            --bg: #0f1226;
+            --card: #15193a;
+            --accent: #ffbf69;
+            --text: #e8eaf6;
+            --muted: #a8b0d9;
+            --ok: #4caf50;
+            --warn: #ff7043;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .home-button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .home-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .image-frame {
+            border: 8px solid #667eea;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            background: #f5f5f5;
+            margin-bottom: 40px;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 300px;
+        }
+
+        .neopatentato-section {
+            background: linear-gradient(180deg, #0f1226 0%, #15193a 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: var(--text);
+        }
+
+        .neopatentato-section h2 {
+            color: #333;
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .neopatentato-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .neopatentato-header h3 {
+            font-size: 1.3em;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .neopatentato-header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, #1a1f4f 0%, var(--card) 100%);
+            border: 1px solid #2a2f60;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .card h3 {
+            margin: 0 0 12px;
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: .4px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(255,191,105,0.12), rgba(255,255,255,0.04));
+            border: 1px dashed rgba(255,191,105,0.45);
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-top: 12px;
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .window {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .pill {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(76,175,80,0.12);
+            border: 1px solid rgba(76,175,80,0.35);
+        }
+
+        .pill .label {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .pill .value {
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            color: var(--text);
+        }
+
+        .clock {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-note strong {
+            color: #ffb4a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home-button-container">
+            <a href="Index.html" class="home-button">← Torna alla Home</a>
+        </div>
+
+        <h1>🚗 Limiti di Velocità in Italia</h1>
+        <div class="subtitle">Guida completa ai regolamenti stradali Italiani</div>
+        
+        <div class="image-frame">
+            <img src="Images/Limiti - Italia.jpg">
+        </div>
+
+        <div class="neopatentato-section">
+            <h2>Orario Neopatentato con Patente B</h2>
+            
+            <div class="neopatentato-header">
+                <h3 id="date">Oggi è...</h3>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Orari autorizzati</h3>
+                    
+                    <div class="hero">
+                        <p>
+                            <strong>Dalle 00:00 alle 05:00:</strong> puoi trasportare solo 1 persona oltre a te.<br><br>
+                            <strong>Dalle 05:00 a 00:00:</strong> puoi trasportare persone entro i limiti di trasporto del veicolo.
+                        </p>
+                    </div>
+
+                    <div class="window">
+                        <div class="pill">
+                            <div class="label">Inizio trasporto</div>
+                            <div class="value">05:00</div>
+                        </div>
+                        <div class="pill">
+                            <div class="label">Fine trasporto</div>
+                            <div class="value">00:00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="statusCard">
+                    <h3>Stato attuale</h3>
+                    <div class="clock" id="now">--:--:--</div>
+                    <div class="stat">
+                        <div class="stat-label">Periodo consentito?</div>
+                        <div class="stat-value" id="canTransport">–</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Prossimo evento</div>
+                        <div class="stat-value" id="nextEvt">–</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Dettagli</h3>
+                    <div class="hero">
+                        <p id="heroSummary">
+                            Controlla l'orario per verificare se puoi trasportare persone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <div>⏱️ Orario in tempo reale.</div>
+                <div style="margin-top:10px;">
+                    <strong>Nota:</strong> verifica sempre il Codice Della Strada con limiti da neopatentato con la patente cat. B.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- FORMATTAZIONE ---
+        function fmtHMS(d) {
+            return d.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit", second:"2-digit" });
+        }
+
+        // --- DATA HEADER ---
+        function updateDateHeader() {
+            const now = new Date();
+            const fmt = new Intl.DateTimeFormat("it-IT", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+            document.getElementById("date").textContent = `Oggi è ${fmt.format(now)}`;
+        }
+
+        // --- AGGIORNA ORA ---
+        function updateClockStatus() {
+            const now = new Date();
+            document.getElementById("now").textContent = fmtHMS(now);
+        }
+
+        // --- AGGIORNA STATO ---
+        function updateStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Puoi trasportare dalle 5:00 a 23:59
+            const can = hour >= 5 && hour < 24;
+
+            const statusText = can ? "Sì - (vedi i limiti di trasporto del veicolo)." : "Si, ma solo 1 persona oltre a te.";
+            document.getElementById("canTransport").textContent = statusText;
+
+            const card = document.getElementById("statusCard");
+            if(card) {
+                card.style.backgroundColor = can ? "rgba(76,175,80,0.2)" : "rgba(255,112,67,0.2)";
+                card.style.borderColor = can ? "rgba(76,175,80,0.35)" : "rgba(255,112,67,0.35)";
+            }
+
+            let nextEvt = "";
+            const seconds = now.getSeconds();
+            if(hour < 5) {
+                const hToGo = 5 - hour;
+                const minToGo = 60 - minutes;
+                const secToGo = 60 - seconds;
+                nextEvt = `Trasporto consentito tra ${hToGo}h ${minToGo}m ${secToGo}s`;
+            } else {
+                const hToGo = 24 - hour;
+                const minToGo = 60 - minutes;
+                const secToGo = 60 - seconds;
+                nextEvt = `Divieto tra ${hToGo}h ${minToGo}m ${secToGo}s`;
+            }
+            document.getElementById("nextEvt").textContent = nextEvt;
+
+            // Aggiorna hero summary
+            const summary = can 
+                ? "Puoi trasportare persone in questo momento, entro i limiti di trasporto del veicolo."
+                : "Puoi trasportare persone, ma solo 1 persona oltre a te. Il trasporto delle persone, entro i limiti di trasporto del veicolo, le potrai trasportare dalle 05:00.";
+            document.getElementById("heroSummary").innerHTML = summary;
+        }
+
+        // --- INIZIALIZZAZIONE ---
+        updateDateHeader();
+        updateClockStatus();
+        updateStatus();
+
+        setInterval(() => {
+            updateClockStatus();
+            updateStatus();
+        }, 1000);
+    </script>
+</body>
+</html>

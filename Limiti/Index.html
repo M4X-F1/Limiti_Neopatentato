@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limiti di Velocità - Neopatentati Europa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(0);
+            position: relative;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            padding: 30px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            border-bottom: 3px solid #f0f0f0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        svg {
+            width: 100px;
+            height: 70px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .country-name {
+            font-size: 2em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: margin-left 0.3s;
+        }
+
+        .card:hover .card-link {
+            color: #764ba2;
+        }
+
+        .card:hover .card-link::after {
+            margin-left: 15px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            svg {
+                width: 80px;
+                height: 55px;
+            }
+
+            .country-name {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Limiti di Velocità Neopatentati</h1>
+            <p>Clicca sui riquadri per scoprire le regole in ogni paese europeo</p>
+        </header>
+
+        <div class="grid">
+            <a href="Italia.html" class="card">
+                <div class="card-header">
+                    <svg viewBox="0 0 900 600">
+                        <rect width="300" height="600" fill="#009246"/>
+                        <rect x="300" width="300" height="600" fill="white"/>
+                        <rect x="600" width="300" height="600" fill="#CE2B37"/>
+                    </svg>
+                    <div class="country-name">Italia</div>
+                </div>
+                <div class="card-content">
+                    <p>Scopri i limiti di velocità e le regole per i neopatentati in Italia con orari specifici.</p>
+                    <span class="card-link">Vai alla pagina</span>
+                </div>
+            </a>
+
+            <a href="Francia.html" class="card">
+                <div class="card-header">
+                    <svg viewBox="0 0 900 600">
+                        <rect width="300" height="600" fill="#002395"/>
+                        <rect x="300" width="300" height="600" fill="white"/>
+                        <rect x="600" width="300" height="600" fill="#ED2939"/>
+                    </svg>
+                    <div class="country-name">Francia</div>
+                </div>
+                <div class="card-content">
+                    <p>Esplora i limiti di velocità francesi e le sanzioni per eccessi di velocità.</p>
+                    <span class="card-link">Vai alla pagina</span>
+                </div>
+            </a>
+
+            <a href="Germania.html" class="card">
+                <div class="card-header">
+                    <svg viewBox="0 0 900 600">
+                        <rect width="900" height="200" fill="black"/>
+                        <rect y="200" width="900" height="200" fill="#DD0000"/>
+                        <rect y="400" width="900" height="200" fill="#FFCE00"/>
+                    </svg>
+                    <div class="country-name">Germania</div>
+                </div>
+                <div class="card-content">
+                    <p>Scopri le regole tedesche e i limiti di velocità su autostrade e strade urbane.</p>
+                    <span class="card-link">Vai alla pagina</span>
+                </div>
+            </a>
+
+            <a href="Austria.html" class="card">
+                <div class="card-header">
+                    <svg viewBox="0 0 900 600">
+                        <rect width="900" height="150" fill="#ED2939"/>
+                        <rect y="150" width="900" height="300" fill="white"/>
+                        <rect y="450" width="900" height="150" fill="#ED2939"/>
+                    </svg>
+                    <div class="country-name">Austria</div>
+                </div>
+                <div class="card-content">
+                    <p>Guida completa ai limiti di velocità austriaci e normative stradali.</p>
+                    <span class="card-link">Vai alla pagina</span>
+                </div>
+            </a>
+
+            <a href="Svizzera.html" class="card">
+                <div class="card-header">
+                    <svg viewBox="0 0 300 300">
+                        <rect width="300" height="300" fill="#FF0000"/>
+                        <rect x="110" y="50" width="80" height="200" fill="white"/>
+                        <rect x="50" y="110" width="200" height="80" fill="white"/>
+                    </svg>
+                    <div class="country-name">Svizzera</div>
+                </div>
+                <div class="card-content">
+                    <p>Scopri le regolamentazioni svizzere sui limiti di velocità e le norme stradali.</p>
+                    <span class="card-link">Vai alla pagina</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

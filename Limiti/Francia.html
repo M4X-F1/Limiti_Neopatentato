@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limiti di Velocità in Francia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .home-button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .home-button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .tables-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .table-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .table-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background-color: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .speed {
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        .conditions-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        
+        .conditions-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .condition-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .condition-item:last-child {
+            border-bottom: none;
+        }
+        
+        .condition-label {
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        .fines-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .fines-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .fine-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .fine-item:last-child {
+            border-bottom: none;
+        }
+        
+        .fine-label {
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .tables-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home-button-container">
+            <a href="Index.html" class="home-button">← Torna alla Home</a>
+        </div>
+
+        <header>
+            <h1>Limiti di Velocità in Francia</h1>
+            <p class="subtitle">Guida completa ai regolamenti stradali francesi</p>
+        </header>
+        
+        <div class="tables-wrapper">
+            <div class="table-section">
+                <h2>Conducenti Esperti</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo di Strada</th>
+                            <th class="speed">Limite (km/h)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zone residenziali</td>
+                            <td class="speed">30</td>
+                        </tr>
+                        <tr>
+                            <td>Strade urbane (generale)</td>
+                            <td class="speed">50</td>
+                        </tr>
+                        <tr>
+                            <td>Strade secondarie senza spartitraffico</td>
+                            <td class="speed">80</td>
+                        </tr>
+                        <tr>
+                            <td>Strade a doppia carreggiata con separazione</td>
+                            <td class="speed">110</td>
+                        </tr>
+                        <tr>
+                            <td>Autostrada (tempo asciutto)</td>
+                            <td class="speed">130</td>
+                        </tr>
+                        <tr>
+                            <td>Autostrada (pioggia)</td>
+                            <td class="speed">110</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-section">
+                <h2>Neopatentati</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo di Strada</th>
+                            <th class="speed">Limite (km/h)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strade secondarie</td>
+                            <td class="speed">80</td>
+                        </tr>
+                        <tr>
+                            <td>Strade a doppia carreggiata</td>
+                            <td class="speed">100</td>
+                        </tr>
+                        <tr>
+                            <td>Autostrada</td>
+                            <td class="speed">110</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-size: 0.85em; color: #666;">
+                    <strong>Nota:</strong> Neopatentato = patente conseguita da meno di 3 anni (o meno di 2 anni se con guida accompagnata)
+                </p>
+            </div>
+        </div>
+        
+        <div class="conditions-section">
+            <h2>Condizioni Speciali</h2>
+            <div class="condition-item">
+                <span class="condition-label">Visibilità inferiore a 50m</span>
+                <span>Limite massimo su qualsiasi strada: <strong style="color: #764ba2;">50 km/h</strong></span>
+            </div>
+            <div class="condition-item">
+                <span class="condition-label">Parigi (molti quartieri)</span>
+                <span>Nuovo standard di: <strong style="color: #764ba2;">30 km/h</strong></span>
+            </div>
+        </div>
+        
+        <div class="fines-section">
+            <h2>Sanzioni per Eccesso di Velocità</h2>
+            <div class="fine-item">
+                <span class="fine-label">Multa minima</span>
+                <span><strong style="color: #764ba2;">€ 68</strong></span>
+            </div>
+            <div class="fine-item">
+                <span class="fine-label">Multa per infrazione grave</span>
+                <span>Fino a <strong style="color: #764ba2;">€ 1.500 o più</strong></span>
+            </div>
+            <div class="fine-item">
+                <span class="fine-label">Altre conseguenze</span>
+                <span>Sospensione della patente (anche per conducenti stranieri)</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
